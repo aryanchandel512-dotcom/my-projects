@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Language Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="logo"><i class="fas fa-code"></i> CodeQuiz</h1>
+        <div class="nav-links">
+            <button id="home-btn" data-page="home">
+                <i class="fas fa-home"></i> Home
+            </button>
+            <button id="history-btn" data-page="history">
+                <i class="fas fa-history"></i> History
+            </button>
+        </div>
+        <div class="auth-status" id="auth-status">
+            </div>
+    </div>
+
+    <div class="app-container">
+        <section id="home-screen" class="page-section">
+             <div id="quiz-intro-container" >
+                <h1>Test Your Programming Knowledge</h1>
+                <p>Select a language below to start the quiz and challenge yourself!</p>
+                <div id="category-btns-container" class="category-buttons">
+                    <button class="category-btn" data-category="js">
+                        <i class="fab fa-js"></i> JavaScript
+                    </button>
+                    <button class="category-btn" data-category="java">
+                        <i class="fab fa-java"></i> Java
+                    </button>
+                    <button class="category-btn" data-category="python">
+                        <i class="fab fa-python"></i> Python
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="difficulty-screen" class="page-section">
+            <h2>Select Difficulty for <span id="difficulty-category-title"></span></h2>
+            <div id="difficulty-btns-container" class="difficulty-buttons">
+                 <button class="difficulty-btn" data-difficulty="easy"><i class="fas fa-child"></i> Easy</button>
+                 <button class="difficulty-btn" data-difficulty="medium"><i class="fas fa-balance-scale"></i> Medium</button>
+                 <button class="difficulty-btn" data-difficulty="hard"><i class="fas fa-brain"></i> Hard</button>
+            </div>
+             <button id="back-to-home-btn" class="btn btn-outline" style="margin-top: 2rem;">
+                <i class="fas fa-arrow-left"></i> Back to Categories
+            </button>
+        </section>
+
+        <section id="quiz-screen" class="page-section">
+            <div class="quiz-header">
+                <span class="timer">
+                    <i class="fas fa-clock"></i> 
+                    <span id="timer-display">30s</span>
+                </span>
+                <span id="progress-display">Question 1/5</span>
+            </div>
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <h2 id="question-text"></h2>
+            <div id="options-container" class="options-container"></div>
+        </section>
+
+        <section id="results-screen" class="page-section">
+            <h2>Quiz Completed! <i class="fas fa-trophy"></i></h2>
+            <div class="score-container">
+                <p>Your final score:</p>
+                <p id="final-score">0/5</p>
+                <p class="score-detail" id="score-percentage">(0%)</p>
+            </div>
+            <p id="feedback-message"></p>
+            <div class="result-actions">
+                <button id="restart-btn" class="btn">
+                    <i class="fas fa-redo"></i> Try Another Level
+                </button>
+                 <button id="certificate-btn" class="btn btn-accent">
+                    <i class="fas fa-certificate"></i> Get Certificate
+                </button>
+                <button id="home-results-btn" class="btn btn-outline">
+                    <i class="fas fa-home"></i> Back to Home
+                </button>
+            </div>
+        </section>
+
+        <section id="login-screen" class="page-section active">
+            <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+            <div class="form-container">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-username">Username:</label>
+                        <input type="text" id="login-username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </form>
+                <div class="form-footer">
+                    Don't have an account? <a href="#" id="register-link">Register here</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="register-screen" class="page-section">
+            <h2><i class="fas fa-user-plus"></i> Register</h2>
+            <div class="form-container">
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-username">Username:</label>
+                        <input type="text" id="register-username" class="form-control" required minlength="4">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password:</label>
+                        <input type="password" id="register-password" class="form-control" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn btn-secondary">
+                        <i class="fas fa-user-plus"></i> Register
+                    </button>
+                </form>
+                <div class="form-footer">
+                    Already have an account? <a href="#" id="login-link">Login here</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="history-screen" class="page-section">
+            <h2><i class="fas fa-history"></i> Quiz History</h2>
+            <p id="history-message">Login to view your quiz history.</p>
+            <ul id="history-list" class="history-list"></ul>
+            <button id="home-history-btn" class="btn">
+                <i class="fas fa-home"></i> Back to Home
+            </button>
+        </section>
+    </div>
+
+    <div id="certificate-container">
+        <div class="certificate-content">
+            <div class="certificate-header">
+                <h1>CERTIFICATE OF ACHIEVEMENT</h1>
+                <h2>This is to certify that</h2>
+            </div>
+            <div class="certificate-body">
+                <p id="certificate-name">John Doe</p>
+                <p>has successfully completed the <strong><span id="certificate-category">JavaScript</span> (<span id="certificate-difficulty">Medium</span>)</strong> programming quiz</p>
+                <p>with a score of <strong><span id="certificate-score">4/5</span></strong></p>
+                <p>demonstrating proficiency in the subject matter.</p>
+                 <p>Created by: <strong>Aryan Chandel</strong></p>
+            </div>
+            <div class="certificate-footer">
+                <div><p>Date: <span id="certificate-date">August 21, 2025</span></p></div>
+                <div><div class="signature-line"></div><p>Quiz Creator</p></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
