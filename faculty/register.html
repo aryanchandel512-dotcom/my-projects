@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="faculty.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Registration</h1>
+
+    <form id="studentForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="text" id="class" placeholder="Class" required>
+        <input type="text" id="rollno" placeholder="Roll Number" required>
+        <input type="text" id="branch" placeholder="Branch" required>
+        <input type="text" id="course" placeholder="Course" required>
+
+        <button type="submit">Generate ID & Continue</button>
+    </form>
+
+    <p id="uniqueIdDisplay"></p>
+</div>
+
+<script>
+document.getElementById("studentForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let student = {
+        name: document.getElementById("name").value,
+        class: document.getElementById("class").value,
+        rollno: document.getElementById("rollno").value,
+        branch: document.getElementById("branch").value,
+        course: document.getElementById("course").value
+    };
+
+  
+    let uniqueId = "STU" + Math.floor(Math.random() * 10000);
+
+    student.id = uniqueId;
+
+    
+    localStorage.setItem("student", JSON.stringify(student));
+
+    document.getElementById("uniqueIdDisplay").innerText =
+        "Your Unique ID: " + uniqueId;
+
+   
+    setTimeout(() => {
+        window.location.href = "faculty.html";
+    }, 2000);
+});
+</script>
+
+</body>
+</html>

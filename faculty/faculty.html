@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Club Registration</title>
+    <link rel="stylesheet" href="faculty.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Club Registration</h1>
+
+    <p id="studentInfo"></p>
+
+    <form id="registrationForm">
+        <h3>Select ONE Club</h3>
+
+        <div class="clubs">
+            <label><input type="radio" name="club" value="Innovation"> Innovation</label>
+            <label><input type="radio" name="club" value="Sports"> Sports</label>
+            <label><input type="radio" name="club" value="Arts"> Arts</label>
+            <label><input type="radio" name="club" value="Travel"> Travel</label>
+            <label><input type="radio" name="club" value="Dance"> Dance</label>
+            <label><input type="radio" name="club" value="Singing"> Singing</label>
+        </div>
+
+        <button type="submit">Register in Club</button>
+    </form>
+
+    <h2>Registered Students</h2>
+    <ul id="studentList"></ul>
+</div>
+
+<script src="faculty.js"></script>
+</body>
+</html>
