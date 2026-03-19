@@ -1,48 +1,77 @@
-// ======================== DATA ========================
-        const allQuestions = {
-            js: {
-                easy: [
-                    { question: "Which keyword declares a variable that cannot be reassigned?", options: ["var", "let", "const", "static"], answer: "const" },
-                    { question: "How do you write 'Hello' in an alert box?", options: ["msg('Hello');", "alert('Hello');", "alertBox('Hello');", "console.log('Hello');"], answer: "alert('Hello');" }
-                ],
-                medium: [
-                    { question: "Which method converts JSON to a JavaScript object?", options: ["JSON.parse()", "JSON.stringify()", "JSON.object()", "JSON.convert()"], answer: "JSON.parse()" },
-                    { question: "How do you find the number of elements in an array named 'myArray'?", options: ["myArray.size", "myArray.count", "myArray.length", "len(myArray)"], answer: "myArray.length" }
-                ],
-                hard: [
-                    { question: "What is the output of `console.log(typeof null);`?", options: ["null", "undefined", "object", "string"], answer: "object" },
-                    { question: "What is a 'closure' in JavaScript?", options: ["A function having access to its parent's scope, even after the parent has returned", "A way to lock a variable's value", "A built-in method for closing windows", "A type of syntax error"], answer: "A function having access to its parent's scope, even after the parent has returned" }
-                ]
-            },
-            java: {
-                easy: [
-                    { question: "Which keyword is used to define a class in Java?", options: ["class", "public", "void", "static"], answer: "class" },
-                    { question: "What is the file extension for compiled Java files?", options: [".java", ".class", ".jar", ".exe"], answer: ".class" }
-                ],
-                medium: [
-                    { question: "What is the entry point of a Java program?", options: ["main()", "start()", "public static void main(String[] args)", "run()"], answer: "public static void main(String[] args)" },
-                    { question: "Which keyword is used for inheritance?", options: ["inherits", "extends", "implements", "super"], answer: "extends" }
-                ],
-                hard: [
-                    { question: "What is the parent class of all classes in Java?", options: ["Object", "Main", "Super", "Parent"], answer: "Object" },
-                    { question: "Is Java 'pass-by-value' or 'pass-by-reference'?", options: ["Pass-by-reference", "It depends on the data type", "Pass-by-value", "Neither"], answer: "Pass-by-value" }
-                ]
-            },
-            python: {
-                easy: [
-                    { question: "Which keyword defines a function in Python?", options: ["function", "def", "func", "define"], answer: "def" },
-                    { question: "How do you create a single-line comment?", options: ["//", "/* */", "#", ""], answer: "#" }
-                ],
-                medium: [
-                    { question: "What is the correct file extension for Python files?", options: [".pyth", ".pt", ".py", ".python"], answer: ".py" },
-                    { question: "How do you get the number of items in a list 'my_list'?", options: ["len(my_list)", "my_list.length", "my_list.size()", "count(my_list)"], answer: "len(my_list)" }
-                ],
-                hard: [
-                    { question: "What does `*args` do in a Python function definition?", options: ["It multiplies arguments", "It's a syntax error", "It passes a variable number of non-keyworded arguments", "It passes keyworded arguments"], answer: "It passes a variable number of non-keyworded arguments" },
-                    { question: "What is a 'list comprehension' in Python?", options: ["A way to understand lists", "A detailed list documentation", "A concise way to create lists", "A method to compare two lists"], answer: "A concise way to create lists" }
-                ]
-            }
-        };
+
+const allQuestions = {
+    js: {
+        easy: [
+            { question: "Which keyword declares a variable that cannot be reassigned?", options: ["var", "let", "const", "static"], answer: "const" },
+            { question: "How do you write 'Hello' in an alert box?", options: ["msg('Hello');", "alert('Hello');", "alertBox('Hello');", "console.log('Hello');"], answer: "alert('Hello');" },
+            { question: "Which symbol is used for comments?", options: ["//", "#", "<!-- -->", "**"], answer: "//" },
+            { question: "Which company developed JavaScript?", options: ["Google", "Microsoft", "Netscape", "IBM"], answer: "Netscape" },
+            { question: "Which keyword declares block-scoped variable?", options: ["var", "let", "define", "int"], answer: "let" }
+        ],
+        medium: [
+            { question: "Which method converts JSON to JS object?", options: ["JSON.parse()", "JSON.stringify()", "JSON.object()", "JSON.convert()"], answer: "JSON.parse()" },
+            { question: "How to get array length?", options: ["size", "count", "length", "len()"], answer: "length" },
+            { question: "Which function runs after page load?", options: ["onload()", "ready()", "init()", "start()"], answer: "onload()" },
+            { question: "Which keyword is used for promises?", options: ["async", "await", "promise", "resolve"], answer: "await" },
+            { question: "Which operator checks equality & type?", options: ["==", "=", "===", "!="], answer: "===" }
+        ],
+        hard: [
+            { question: "typeof null returns?", options: ["null", "object", "undefined", "string"], answer: "object" },
+            { question: "What is closure?", options: ["Scope access after parent returns", "Loop", "Event", "Error"], answer: "Scope access after parent returns" },
+            { question: "What is event bubbling?", options: ["Top-down", "Bottom-up", "Parallel", "None"], answer: "Bottom-up" },
+            { question: "Which method clones object?", options: ["Object.assign()", "clone()", "copy()", "spread"], answer: "Object.assign()" },
+            { question: "What is hoisting?", options: ["Move declarations to top", "Delete vars", "Compile error", "Looping"], answer: "Move declarations to top" }
+        ]
+    },
+    java: {
+          easy: [
+      { question: "Keyword to define class?", options: ["class", "public", "void", "static"], answer: "class" },
+      { question: "Compiled file extension?", options: [".java", ".class", ".jar", ".exe"], answer: ".class" },
+      { question: "Which keyword prints output?", options: ["print", "System.out.println", "echo", "console"], answer: "System.out.println" },
+      { question: "Java is?", options: ["Compiled", "Interpreted", "Both", "None"], answer: "Both" },
+      { question: "Default value of int?", options: ["0", "null", "undefined", "1"], answer: "0" }
+    ],
+    medium: [
+      { question: "Entry point?", options: ["main()", "start()", "public static void main(String[] args)", "run()"], answer: "public static void main(String[] args)" },
+      { question: "Inheritance keyword?", options: ["inherits", "extends", "implements", "super"], answer: "extends" },
+      { question: "Interface keyword?", options: ["interface", "class", "abstract", "implements"], answer: "interface" },
+      { question: "Exception handling keyword?", options: ["catch", "error", "try", "throw"], answer: "try" },
+      { question: "Array index starts at?", options: ["0", "1", "-1", "depends"], answer: "0" }
+    ],
+    hard: [
+      { question: "Parent class?", options: ["Object", "Main", "Super", "Parent"], answer: "Object" },
+      { question: "Java is?", options: ["Pass-by-reference", "Pass-by-value", "Both", "None"], answer: "Pass-by-value" },
+      { question: "JVM stands for?", options: ["Java Virtual Machine", "Java Variable Method", "Joint VM", "None"], answer: "Java Virtual Machine" },
+      { question: "Which is thread class?", options: ["Thread", "Runnable", "Process", "Executor"], answer: "Thread" },
+      { question: "Garbage collection does?", options: ["Deletes unused memory", "Compiles code", "Runs code", "Stores data"], answer: "Deletes unused memory" }
+    ]
+  },
+
+ 
+    python: {
+          easy: [
+        { question: "Keyword for function?", options: ["function", "def", "func", "define"], answer: "def" },
+        { question: "Comment symbol?", options: ["//", "#", "/* */", "--"], answer: "#" },
+        { question: "Python is?", options: ["Compiled", "Interpreted", "Both", "None"], answer: "Interpreted" },
+        { question: "List uses?", options: ["[]", "{}", "()", "<>"], answer: "[]" },
+        { question: "Print function?", options: ["echo()", "print()", "log()", "write()"], answer: "print()" }
+    ],
+        medium: [
+            { question: "File extension?", options: [".py", ".pt", ".python", ".p"], answer: ".py" },
+            { question: "Length of list?", options: ["len()", "size()", "count()", "length"], answer: "len()" },
+            { question: "Dictionary symbol?", options: ["{}", "[]", "()", "<>"], answer: "{}" },
+            { question: "Loop keyword?", options: ["loop", "for", "iterate", "repeat"], answer: "for" },
+            { question: "Conditional keyword?", options: ["if", "when", "check", "case"], answer: "if" }
+        ],
+            hard: [
+                { question: "*args means?", options: ["Multiply args", "Error", "Multiple arguments", "Keyword args"], answer: "Multiple arguments" },
+                { question: "List comprehension?", options: ["Docs", "Compare lists", "Create lists concisely", "Loop only"], answer: "Create lists concisely" },
+                { question: "Lambda is?", options: ["Named function", "Anonymous function", "Loop", "Class"], answer: "Anonymous function" },
+                { question: "GIL stands for?", options: ["Global Interpreter Lock", "General Input Lock", "Global Index List", "None"], answer: "Global Interpreter Lock" },
+                { question: "Tuple is?", options: ["Mutable", "Immutable", "Dynamic", "None"], answer: "Immutable" }
+            ]
+}
+};
 
         let state = {
             currentQuestions: [], currentQuestionIndex: 0, score: 0,
